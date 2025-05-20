@@ -10,6 +10,9 @@ Hopefully this proves to help someone familiar with Linux to use Windows and vic
 
 (might work on MacOS too since i heard macos is unix based but i dont have a Mac so i cant test lmao)
 
+## Why?
+Why not?
+
 ## What does this repo contain?
 In the `linux` subdirectory, it contains Linux equivalents of Windows applications, commands, and other shit like that.
 Likewise, in the `windows` subdirectory, it contains Windows equivalents of Linux apps, commands, etc.
