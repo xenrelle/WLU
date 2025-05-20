@@ -1,5 +1,4 @@
-# cls
-![Accuracy Badge](https://img.shields.io/badge/Accuracy-5/5_(Basically_a_Clone)-blue)
+# cls ![Accuracy Badge](https://img.shields.io/badge/Accuracy-5/5_(Basically_a_Clone)-blue)
 It's, exactly what you think it is. Just cls. However, just like the real Windows cls, it prints that ugly newline on top of the screen after wiping the console output!
 
 ## Build Instructions
