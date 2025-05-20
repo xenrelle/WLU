@@ -6,6 +6,8 @@ I don't know I thought it'd be fun to port Windows shit to Linux and Linux shit 
 
 This repository contains tons of subdirectories containing applications with their own build instructions.
 
+Hopefully this proves to help someone familiar with Linux to use Windows and vice versa.
+
 (might work on MacOS too since i heard macos is unix based but i dont have a Mac so i cant test lmao)
 
 ## What does this repo contain?
