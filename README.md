@@ -21,3 +21,8 @@ For now, you'll need to compile everything manually, as this is nowhere near sta
 
 ## How do I compile this?
 There isn't a way to really compile the entire repository, since it's split between two OSes and is designed to be modular, but you can pick which applications/commands you want and compile them manually! Each module has its own build instructions in its README.md
+
+## Other Name Candidates
+- WoL (Windows on Linux, referencing the SysWOW64 folder in Windows)
+- WALL (Windows Absolutely LOVES Linux, reference to WINE and supporting my Windows x Linux fanfinction, also funny house component (Windows on Walls))
+- Winux (a gay couple name idk)
