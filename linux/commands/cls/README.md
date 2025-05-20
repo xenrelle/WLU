@@ -1,6 +1,9 @@
 # cls ![Accuracy Badge](https://img.shields.io/badge/Accuracy-5/5_(Basically_a_Clone)-blue)
 It's, exactly what you think it is. Just cls. However, just like the real Windows cls, it prints that ugly newline on top of the screen after wiping the console output!
 
+## Functions
+Clears the console output using ANSI escape codes.
+
 ## Build Instructions
 You'll need `gcc` installed in order to build this. Then just build it like normal:
 ```bash
