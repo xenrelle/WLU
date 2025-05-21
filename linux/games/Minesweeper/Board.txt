@@ -1,0 +1,74 @@
+just some decomp stuff
+
+?getSurroundingFlagCount@Board@@AEAAHHH@Z proc near
+arg_0           = qword ptr  8
+arg_8           = qword ptr  10h
+arg_10          = qword ptr  18h
+arg_18          = qword ptr  20h
+                mov     rax, rsp
+                mov     [rax+8], rbx
+                mov     [rax+10h], rbp
+                mov     [rax+18h], rsi
+                mov     [rax+20h], rdi
+                push    r12
+                push    r13
+                push    r14
+                lea     r9d, [rdx-1]
+                lea     esi, [rdx+1]
+                xor     r11d, r11d
+                cmp     r9d, esi
+                mov     rbx, rcx
+                movsxd  rbp, r8d
+                movsxd  r10, r9d
+                movsxd  r14, edx
+                jg      short loc_1000273BD
+                lea     r12d, [r8-1]
+                lea     edi, [r8+1]
+loc_100027364:                          ; CODE XREF: Board::getSurroundingFlagCount(int,int)+93v
+                cmp     r12d, edi
+                mov     edx, r12d
+                lea     r8, [rbp-1]
+                jg      short loc_1000273B2
+loc_100027370:                          ; CODE XREF: Board::getSurroundingFlagCount(int,int)+88v
+                test    r10, r10
+                js      short loc_1000273A9
+                cmp     r9d, [rbx+10h]
+                jge     short loc_1000273A9
+                test    r8, r8
+                js      short loc_1000273A9
+                cmp     edx, [rbx+0Ch]
+                jge     short loc_1000273A9
+                cmp     r10, r14
+                jnz     short loc_10002738F
+                cmp     r8, rbp
+                jz      short loc_1000273A9
+loc_10002738F:                          ; CODE XREF: Board::getSurroundingFlagCount(int,int)+60^
+                mov     rax, [rbx+50h]
+                mov     rcx, [rax+10h]
+                mov     rax, [rcx+r10*8]
+                mov     rcx, [rax+10h]
+                cmp     dword ptr [rcx+r8*4], 0Ah
+                jnz     short loc_1000273A9
+                inc     r11d
+loc_1000273A9:                          ; CODE XREF: Board::getSurroundingFlagCount(int,int)+4B^
+                                        ; Board::getSurroundingFlagCount(int,int)+51↑j ...
+                inc     edx
+                inc     r8
+                cmp     edx, edi
+                jle     short loc_100027370
+loc_1000273B2:                          ; CODE XREF: Board::getSurroundingFlagCount(int,int)+46^
+                inc     r9d
+                inc     r10
+                cmp     r9d, esi
+                jle     short loc_100027364
+loc_1000273BD:                          ; CODE XREF: Board::getSurroundingFlagCount(int,int)+32^
+                mov     rbx, [rsp+18h+arg_0]
+                mov     rbp, [rsp+18h+arg_8]
+                mov     rsi, [rsp+18h+arg_10]
+                mov     rdi, [rsp+18h+arg_18]
+                mov     eax, r11d
+                pop     r14
+                pop     r13
+                pop     r12
+                retn
+?getSurroundingFlagCount@Board@@AEAAHHH@Z endp
