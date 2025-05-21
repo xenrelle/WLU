@@ -17,12 +17,11 @@ public:
 	int32_t firstYClickPos; //0x2C
 	uint32_t randSeed; //0x30
 	uint32_t unk_0x34;
-	uint32_t unk_0x38;
-	uint32_t unk_0x3C;
-	uint32_t unk_0x40;
+	uint32_t unk_0x38; // r12d
+	uint32_t unk_0x3C; // r12d
+	uint32_t unk_0x40; // r13d
 	uint32_t unk_0x44;
-	uint32_t unk_0x48;
-	uint32_t unk_0x4C;
+	uint64_t unk_0x48; // r12
 	uint64_t* boardTiles; // 0x50, unknown type but likely a pointer
 	uint64_t* boardMines; // 0x58, unknown type but likely a pointer
 

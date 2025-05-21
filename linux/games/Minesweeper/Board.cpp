@@ -6,8 +6,79 @@ enum EDifficulty {
 	ADVANCED
 }
 
+enum SquareType {
+	unk0,
+	One,
+	Two,
+	Three,
+	Four,
+	Five,
+	Six,
+	Seven,
+	Eight,
+	Uncovered,
+	Flagged,
+	unk11,
+	Empty
+}
+
 Board::Board(EDifficulty difficulty, int width, int height, int mines, uint randSeed, int firstXClickPos, int firstYClickPos, bool b0) {
-	// something here
+	//this->vftable = void*;
+	this->vftable = void*;
+	int r12 = 0; // xor r12d, r12d effectively just zeroes out the register
+	this->unk_0x38 = 0; // r12d
+	this->unk_0x3C = 0; // r12d
+	this->unk_0x38 = 0; // r12d
+	this->unk_0x40 = 0x10; // r13d
+	this->unk_0x48 = 0; // r12
+	this->flagsPlaced = 0; // r12d
+	this->timeElapsed = 0; // r12d
+	this->revealedSquares = 0; // r12d
+	this->revealsAttempted = 0; // r12d
+	this->boardTiles = nullptr; // r12
+	this->boardMines = nullptr; // r12
+	this->unk_0x48 = 0; // r12
+	this->difficulty = difficulty;
+	this->mines = mines;
+	this->height = height;
+	this->width = width;
+	this->randSeed = randSeed;
+	this->firstXClickPos = firstXClickPos;
+	this->firstYClickPos = firstYClickPos;
+
+	uint8_t* boardTilePtr = (uint8_t*)malloc(0x18);
+	if (boardTilePtr) {
+		*(uint32_t*)(boardTilePtr) = 0;
+		*(uint32_t*)(boardTilePtr + 0x4) = 0;
+		*(uint32_t*)(boardTilePtr + 0x8) = 0x10;
+		*(uint64_t*)(boardTilePtr + 0x10) = 0;
+	} else {
+		boardTilePtr = 0;
+	}
+
+	this->boardTiles = boardTilePtr;
+
+	int v11 = 0;
+	if (this->width > 0) {
+		int v12 = 0;
+		do {
+			uint8_t* v13 = (uint8_t*)malloc(0x18);
+			if (v13) {
+				*(uint32_t*)(v13) = 0;
+				*(uint32_t*)(v13 + 0x4) = 0;
+				*(uint32_t*)(v13 + 0x8) = 0x10;
+				*(uint64_t*)(v13 + 0x10) = 0;
+			} else {
+				v13 = 0;
+			}
+			Array<IEventListener *>::Add(this->boardTiles, v13);
+			for (int i = 0; i < this->height; ++i) {
+				Array<enum NodeType>::Add(*(_QWORD *)(*(_QWORD *)(*(_QWORD *)(a1 + 80) + 16i64) + v12), 9i64, v14, v15);
+			}
+			++v11;
+			v12 += 8i64;
+		} while (v11 < this->width);
+	}
 }
 
 void ToXML(void* serialXML) {
