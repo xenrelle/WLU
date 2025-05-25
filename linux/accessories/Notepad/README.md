@@ -10,3 +10,6 @@ You'll need `qt5-base` installed in order to build this. Then just build it like
 qmake
 make
 ```
+
+## AeroThemePlasma Users
+For those using AeroThemePlasma, check out [this README file](/linux/aerothemeplasma.md) to apply the theme to Qt applications!
